@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Dadu's : Citizen AI Chatbot</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+
+  <style>
+    body {
+      background-color: #f0f2f5;
+      font-family: 'Roboto', sans-serif;
+      background: url('/images/image_02.png') no-repeat center center;
+      background-size: 95%;
+      margin: 0;
+      height: 100vh;
+      overflow: hidden;
+    }
+
+    .chat-container {
+      position: fixed;
+      bottom: 24px;
+      right: 24px;
+      width: 360px;
+      height: 500px;
+      border-radius: 12px;
+      box-shadow: 0 6px 24px rgba(0, 0, 0, 0.2);
+      background: white;
+      display: flex;
+      flex-direction: column;
+      transition: height 0.3s ease, width 0.3s ease;
+      overflow: hidden;
+      z-index: 9999;
+    }
+
+    .chat-container.maximized {
+      width: 90vw;
+      height: 90vh;
+      bottom: 5vh;
+      right: 5vw;
+      border-radius: 12px;
+    }
+
+    #chatToggleBtn {
+      position: fixed;
+      bottom: 24px;
+      right: 24px;
+      width: 60px;
+      height: 60px;
+      border-radius: 50%;
+      font-size: 28px;
+      background-color: #1976d2;
+      color: white;
+      border: none;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+      cursor: pointer;
+      display: none;
+      z-index: 9999;
+    }
+
+    .chat-header {
+      background: #1976d2;
+      color: white;
+      padding: 16px;
+      font-weight: 500;
+      font-size: 1.2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      user-select: none;
+    }
+
+    .chat-controls {
+      display: flex;
+      gap: 8px;
+    }
+
+    .chat-controls button {
+      background: transparent;
+      border: none;
+      color: white;
+      font-size: 18px;
+      cursor: pointer;
+      padding: 4px 8px;
+      border-radius: 6px;
+      transition: background-color 0.2s ease;
+    }
+
+    .chat-controls button:hover {
+      background-color: rgba(255, 255, 255, 0.2);
+    }
+
+    .chat-body {
+      flex: 1;
+      overflow-y: auto;
+      padding: 16px;
+      display: flex;
+      flex-direction: column;
+      scroll-behavior: smooth;
+    }
+
+    .message {
+      max-width: 75%;
+      padding: 10px 14px;
+      border-radius: 16px;
+      font-size: 0.95rem;
+      line-height: 1.4;
+      animation: fadeIn 0.3s ease-out;
+      word-wrap: break-word;
+      margin-bottom: 12px;
+    }
+
+    .user-message {
+      align-self: flex-end;
+      background-color: #1976d2;
+      color: white;
+      border-bottom-right-radius: 0;
+    }
+
+    .bot-message {
+      align-self: flex-start;
+      background-color: #e3f2fd;
+      color: #333;
+      border-bottom-left-radius: 0;
+    }
+
+    .bot-message > * {
+      margin-top: 0;
+      margin-bottom: 0.3rem;
+      padding: 0;
+    }
+
+    .bot-message ol,
+    .bot-message ul {
+      padding-left: 1.2rem;
+      margin-top: 0;
+      margin-bottom: 0.4rem;
+    }
+
+    .bot-message li {
+      margin-bottom: 0.2rem;
+    }
+
+    .user-message > * {
+      margin-top: 0;
+      margin-bottom: 0;
+    }
+
+    .chat-footer {
+      display: flex;
+      padding: 12px;
+      border-top: 1px solid #ddd;
+    }
+
+    .chat-footer input {
+      flex: 1;
+      border: none;
+      border-radius: 24px;
+      padding: 10px 16px;
+      background-color: #f1f3f4;
+      outline: none;
+      font-size: 1rem;
+    }
+
+    .chat-footer button {
+      border: none;
+      background: #1976d2;
+      color: white;
+      padding: 10px 18px;
+      margin-left: 10px;
+      border-radius: 24px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+    .chat-footer button:hover {
+      background-color: #115293;
+    }
+
+
+    .thinking-bubble {
+      opacity: 0.6;
+      font-style: italic;
+      animation: fadeIn 0.3s ease-in-out infinite alternate;
+    }
+
+    .thinking-icon {
+      font-size: 1.2rem;
+      margin-right: 6px;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(8px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+  </style>
+</head>
+<body>
+
+<div class="chat-container" id="chatContainer" role="dialog" aria-label="Chatbot window">
+  <div class="chat-header">
+<!--    <div>Dadu's Citizen AI Assistant</div>-->
+    <div>
+      <h5><i class="fa-solid fa-user-astronaut fa-lg me-2"></i> Dadu's Citizen AI Bot</h5>
+    </div>
+
+    <div class="chat-controls">
+      <button id="minimizeBtn" title="Minimize">🗕</button>
+      <button id="maximizeBtn" title="Maximize">🗖</button>
+      <button id="restoreBtn" title="Restore" style="display:none;">🗗</button>
+    </div>
+  </div>
+  <div class="chat-body" id="chatBox">
+    <div class="message bot-message">Hey Citizen! How can I assist you today?</div>
+  </div>
+  <div class="chat-footer">
+    <input type="text" id="userInput" placeholder="Type your query..." aria-label="Chat input" />
+    <!-- Old -->
+    <!-- <button id="sendBtn" aria-label="Send message">Send</button> -->
+
+    <!-- New -->
+    <button id="sendBtn" aria-label="Send message">
+      <i class="fas fa-paper-plane"></i>
+    </button>
+
+  </div>
+</div>
+
+<button id="chatToggleBtn" aria-label="Open chat">💬</button>
+
+<script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+<script>
+  $(document).ready(function () {
+    const chatContainer = $('#chatContainer');
+    const chatToggleBtn = $('#chatToggleBtn');
+    const minimizeBtn = $('#minimizeBtn');
+    const maximizeBtn = $('#maximizeBtn');
+    const restoreBtn = $('#restoreBtn');
+
+    minimizeBtn.click(() => {
+      chatContainer.hide();
+      chatToggleBtn.show();
+    });
+
+    maximizeBtn.click(() => {
+      chatContainer.addClass('maximized');
+      maximizeBtn.hide();
+      restoreBtn.show();
+    });
+
+    restoreBtn.click(() => {
+      chatContainer.removeClass('maximized');
+      restoreBtn.hide();
+      maximizeBtn.show();
+    });
+
+    chatToggleBtn.click(() => {
+      chatContainer.show();
+      chatToggleBtn.hide();
+      $('#userInput').focus();
+    });
+
+    $('#userInput').keypress(function (e) {
+      if (e.which === 13) $('#sendBtn').click();
+    });
+
+    $('#sendBtn').click(function () {
+      const input = $('#userInput');
+      const message = input.val().trim();
+      if (!message) return;
+
+      appendUserMessage(message);
+      input.val('');
+
+      showThinkingBubble(); // Show 🤔 bubble
+
+      $.ajax({
+        url: '/api/chat/respond',
+        type: 'POST',
+        contentType: 'application/json',
+        data: JSON.stringify({ message }),
+        success: function (htmlResponse) {
+        const delay = Math.floor(Math.random() * 7000) + 2000; // 2000–7000 ms
+        setTimeout(() => {
+            appendBotHtml(htmlResponse);
+          }, delay);
+        },
+        error: function () {
+          appendBotHtml('<div class="message bot-message">⚠️ Server error. Try again.</div>');
+        }
+      });
+    });
+
+    function showThinkingBubble() {
+      const thinkingMsg = document.createElement('div');
+      thinkingMsg.className = 'message bot-message thinking-bubble';
+      thinkingMsg.innerHTML = `
+        <span class="thinking-icon">
+          <i class="fas fa-spinner fa-spin fa-slow"></i>
+        </span>
+      `;
+
+      document.getElementById('chatBox').appendChild(thinkingMsg);
+      document.getElementById('chatBox').scrollTop = document.getElementById('chatBox').scrollHeight;
+    }
+    function appendUserMessage(text) {
+      $('#chatBox')
+        .append(`<div class="message user-message">${escapeHtml(text)}</div>`)
+        .scrollTop($('#chatBox')[0].scrollHeight);
+    }
+
+    function appendBotHtml(html) {
+      document.querySelectorAll('.thinking-bubble').forEach(el => el.remove());
+      const container = $('<div class="message bot-message"></div>').html(html);
+      $('#chatBox').append(container).scrollTop($('#chatBox')[0].scrollHeight);
+    }
+
+    function escapeHtml(text) {
+      return $('<div>').text(text).html();
+    }
+  });
+</script>
+
+</body>
+</html>
