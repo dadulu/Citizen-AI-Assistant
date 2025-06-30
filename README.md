@@ -17,8 +17,8 @@ It uses intelligent natural language understanding with structured domain expert
 
 ---
 
-## 📡 Live Demo
-<a href="https://citizen-ai-assistant.netlify.app/" target="_blank" rel="noopener noreferrer">🚀 Launch Citizen AI Assistant (Live Demo)</a>
+## 📡 Live App
+<a href="http://ec2-3-142-42-235.us-east-2.compute.amazonaws.com:9999/" target="_blank" rel="noopener noreferrer">🚀 Launch Citizen AI Assistant (Live Demo)</a>
 
 ---
 
