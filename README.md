@@ -37,7 +37,7 @@ Citizens often face delays or confusion while navigating government websites or 
 ## 🧱 System Architecture
 
 The architecture is modular, API-driven, and easily deployable on cloud or edge environments.
-![Citizen AI Architecture](citizenai_architecture.png)
+![Citizen AI Architecture](assets/citizenai_architecture.png)
 
 ---
 
