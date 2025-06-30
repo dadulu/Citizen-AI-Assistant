@@ -16,13 +16,6 @@ It uses intelligent natural language understanding with structured domain expert
 * 🔐 **Secure and transparent**: Ethical response models and verifiable links for user trust
 
 ---
-## Demo of the Working Version
-[![Watch the video](assets/citizen_ai_demo.gif)](assets/citizen_ai_demo.mp4)
-
-## 📡 Live App
-<a href="http://ec2-3-142-42-235.us-east-2.compute.amazonaws.com:9999/" target="_blank" rel="noopener noreferrer">🚀 Launch Citizen AI Assistant (Live Demo)</a>
-
----
 
 ## 💡 Use Case
 
@@ -34,6 +27,27 @@ Citizens often face delays or confusion while navigating government websites or 
 * Can be integrated into government websites, apps, and kiosks
 * Reduces workload on human helplines
 
+---
+## Demo of the Working Version
+[![Watch the video](assets/citizen_ai_demo.gif)](assets/citizen_ai_demo.mp4)
+
+[Download the Demo Video](assets/citizen_ai_demo.mp4)
+
+---
+
+## 📡 Live App
+<a href="http://ec2-3-142-42-235.us-east-2.compute.amazonaws.com:9999/" target="_blank" rel="noopener noreferrer">🚀 Launch Citizen AI Assistant (Live Demo)</a>
+
+---
+### Screenshots
+
+![Chat Bot Interaction](screenshots/screenshot_01.PNG)
+
+![Chat Bot Interaction](screenshots/screenshot_02.PNG)
+
+![Chat Bot Interaction](screenshots/screenshot_03.PNG)
+
+![Chat Bot Interaction](screenshots/screenshot_04.PNG)
 ---
 
 ## 🧱 System Architecture
