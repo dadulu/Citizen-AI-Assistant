@@ -17,7 +17,7 @@ It uses intelligent natural language understanding with structured domain expert
 
 ---
 ## Demo of the Working Version
-[![Watch the video](asserts/citizen_ai_demo.gif)](assets/citizen_ai_demo.mp4)
+[![Watch the video](assets/citizen_ai_demo.gif)](assets/citizen_ai_demo.mp4)
 
 ## 📡 Live App
 <a href="http://ec2-3-142-42-235.us-east-2.compute.amazonaws.com:9999/" target="_blank" rel="noopener noreferrer">🚀 Launch Citizen AI Assistant (Live Demo)</a>
