@@ -39,16 +39,6 @@ Citizens often face delays or confusion while navigating government websites or 
 <a href="http://ec2-3-142-42-235.us-east-2.compute.amazonaws.com:9999/" target="_blank" rel="noopener noreferrer">🚀 Launch Citizen AI Assistant (Live Demo)</a>
 
 ---
-### Screenshots
-
-![Chat Bot Interaction](screenshots/screenshot_01.PNG)
-
-![Chat Bot Interaction](screenshots/screenshot_02.PNG)
-
-![Chat Bot Interaction](screenshots/screenshot_03.PNG)
-
-![Chat Bot Interaction](screenshots/screenshot_04.PNG)
----
 
 ## 🧱 System Architecture
 
@@ -66,6 +56,17 @@ The architecture is modular, API-driven, and easily deployable on cloud or edge 
 * **Icons & Fonts:** Font Awesome, Google Fonts
 
 ---
+### Screenshots
+
+![Chat Bot Interaction](screenshots/screenshot_01.PNG)
+
+![Chat Bot Interaction](screenshots/screenshot_02.PNG)
+
+![Chat Bot Interaction](screenshots/screenshot_03.PNG)
+
+![Chat Bot Interaction](screenshots/screenshot_04.PNG)
+---
+
 
 ## 🆔 Aadhaar Card FAQs
 
