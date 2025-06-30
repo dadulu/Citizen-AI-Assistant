@@ -28,15 +28,10 @@ Citizens often face delays or confusion while navigating government websites or 
 * Reduces workload on human helplines
 
 ---
-## Demo of the Working Version
-[![Watch the video](assets/citizen_ai_demo.gif)](assets/citizen_ai_demo.mp4)
-
-[Download the Demo Video](https://github.com/dadulu/Citizen-AI-Assistant/blob/main/assets/citizen_ai_demo.mp4)
-
----
-
 ## 📡 Live App
-<a href="http://ec2-3-142-42-235.us-east-2.compute.amazonaws.com:9999/" target="_blank" rel="noopener noreferrer">🚀 Launch Citizen AI Assistant (Live Demo)</a>
+<a href="https://citizen-ai-assistant.netlify.app" target="_blank" rel="noopener noreferrer">🚀 Launch Citizen AI Assistant (Live Demo)</a>
+
+[![Watch the video](assets/citizen_ai_demo.gif)](assets/citizen_ai_demo.mp4)
 
 ---
 
