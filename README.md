@@ -29,7 +29,9 @@ Citizens often face delays or confusion while navigating government websites or 
 
 ---
 ## 📡 Live App
-<a href="https://citizen-ai-assistant.netlify.app" target="_blank" rel="noopener noreferrer">🚀 Launch Citizen AI Assistant (Live Demo)</a>
+🚀 [Launch Citizen AI Assistant (Live AWS)](https://ec2-3-142-42-235.us-east-2.compute.amazonaws.com:9988)
+
+🚀 [Launch Citizen AI Assistant (Live Netlify)](https://citizen-ai-assistant.netlify.app)
 
 [![Watch the video](assets/citizen_ai_demo.gif)](assets/citizen_ai_demo.mp4)
 
