@@ -275,6 +275,7 @@
         url: 'http://ec2-3-142-42-235.us-east-2.compute.amazonaws.com:9999/api/chat/respond',
         type: 'POST',
         contentType: 'application/json',
+        crossDomain: true,
         data: JSON.stringify({ message }),
         success: function (htmlResponse) {
         const delay = Math.floor(Math.random() * 7000) + 2000; // 2000–7000 ms
