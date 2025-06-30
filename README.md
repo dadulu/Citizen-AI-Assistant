@@ -18,7 +18,7 @@ It uses intelligent natural language understanding with structured domain expert
 ---
 
 ## 📡 Live Demo
-* [🚀 Launch Citizen AI Bot (Live Demo)](http://ec2-3-142-42-235.us-east-2.compute.amazonaws.com:9999/)
+* [🚀 Launch Citizen AI Assistant (Live Demo)](https://citizen-ai-assistant.netlify.app/)
 
 ---
 
@@ -143,5 +143,5 @@ The architecture is modular, API-driven, and easily deployable on cloud or edge 
 * **Cloud Backend:** AWS Bedrock
 
 
-### © 2025 Citizen AI Bot — All rights reserved.
+### © 2025 Citizen AI Assistant — All rights reserved.
 
