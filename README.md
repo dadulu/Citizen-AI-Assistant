@@ -31,7 +31,7 @@ Citizens often face delays or confusion while navigating government websites or 
 ## Demo of the Working Version
 [![Watch the video](assets/citizen_ai_demo.gif)](assets/citizen_ai_demo.mp4)
 
-[Download the Demo Video](assets/citizen_ai_demo.mp4)
+[Download the Demo Video](https://github.com/dadulu/Citizen-AI-Assistant/blob/main/assets/citizen_ai_demo.mp4)
 
 ---
 
