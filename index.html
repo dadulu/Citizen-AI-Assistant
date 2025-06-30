@@ -272,7 +272,7 @@
       showThinkingBubble();
 
       $.ajax({
-        url: '/api/chat/respond',
+        url: 'http://ec2-3-142-42-235.us-east-2.compute.amazonaws.com:9999/api/chat/respond',
         type: 'POST',
         contentType: 'application/json',
         data: JSON.stringify({ message }),
