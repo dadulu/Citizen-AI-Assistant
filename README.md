@@ -6,7 +6,7 @@
 
 ## 🚀 Project Overview
 
-**Citizen AI Bot** is a powerful conversational interface architected to bridge the gap between Indian citizens and essential government services.
+**Citizen AI Assistant** is a powerful conversational interface architected to bridge the gap between Indian citizens and essential government services.
 It uses intelligent natural language understanding with structured domain expertise to offer accurate, timely, and personalized assistance.
 
 ### 🎯 Core Capabilities
