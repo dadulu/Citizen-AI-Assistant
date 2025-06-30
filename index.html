@@ -12,7 +12,7 @@
     body {
       background-color: #f0f2f5;
       font-family: 'Roboto', sans-serif;
-      background: url('/images/image_02.png') no-repeat center center;
+      background: url('/assets/wallpaper.png') no-repeat center center;
       background-size: 95%;
       margin: 0;
       height: 100vh;
@@ -217,14 +217,9 @@
   </div>
   <div class="chat-footer">
     <input type="text" id="userInput" placeholder="Type your query..." aria-label="Chat input" />
-    <!-- Old -->
-    <!-- <button id="sendBtn" aria-label="Send message">Send</button> -->
-
-    <!-- New -->
     <button id="sendBtn" aria-label="Send message">
       <i class="fas fa-paper-plane"></i>
     </button>
-
   </div>
 </div>
 
@@ -274,7 +269,7 @@
       appendUserMessage(message);
       input.val('');
 
-      showThinkingBubble(); // Show 🤔 bubble
+      showThinkingBubble();
 
       $.ajax({
         url: '/api/chat/respond',
